@@ -240,7 +240,7 @@ public class NativeNeo4jStructureCheck extends AbstractNeo4jGremlinTest {
             // assertEquals(1, b.properties("location").count().next().intValue());
             assertEquals(0, g.E().count().next().intValue());
 
-            assertEquals(4l, this.getBaseGraph().execute("MATCH n RETURN COUNT(n)", null).next().get("COUNT(n)"));
+            assertEquals(4l, this.getBaseGraph().execute("MATCH (n) RETURN COUNT(n)", null).next().get("COUNT(n)"));
             assertEquals(2l, this.getBaseGraph().execute("MATCH (n)-[r]->(m) RETURN COUNT(r)", null).next().get("COUNT(r)"));
             assertEquals(2l, this.getBaseGraph().execute("MATCH (a)-[r]->() WHERE id(a) = " + a.id() + " RETURN COUNT(r)", null).next().get("COUNT(r)"));
             final AtomicInteger counter = new AtomicInteger(0);
@@ -277,7 +277,7 @@ public class NativeNeo4jStructureCheck extends AbstractNeo4jGremlinTest {
             //  assertEquals(1, b.properties("name").count().next().intValue());
             // assertEquals(1, b.properties("location").count().next().intValue());
             assertEquals(0, g.E().count().next().intValue());
-            assertEquals(2l, this.getBaseGraph().execute("MATCH n RETURN COUNT(n)", null).next().get("COUNT(n)"));
+            assertEquals(2l, this.getBaseGraph().execute("MATCH (n) RETURN COUNT(n)", null).next().get("COUNT(n)"));
             assertEquals(0l, this.getBaseGraph().execute("MATCH (n)-[r]->(m) RETURN COUNT(r)", null).next().get("COUNT(r)"));
 
             assertEquals(1, IteratorUtils.count(a.getBaseVertex().getKeys()));
@@ -293,7 +293,7 @@ public class NativeNeo4jStructureCheck extends AbstractNeo4jGremlinTest {
             //    assertEquals(0, a.properties().count().next().intValue());
             //   assertEquals(2, b.properties().count().next().intValue());
             assertEquals(0, g.E().count().next().intValue());
-            assertEquals(2l, this.getBaseGraph().execute("MATCH n RETURN COUNT(n)", null).next().get("COUNT(n)"));
+            assertEquals(2l, this.getBaseGraph().execute("MATCH (n) RETURN COUNT(n)", null).next().get("COUNT(n)"));
             assertEquals(0l, this.getBaseGraph().execute("MATCH (n)-[r]->(m) RETURN COUNT(r)", null).next().get("COUNT(r)"));
             assertEquals(0, IteratorUtils.count(a.getBaseVertex().getKeys()));
             assertEquals(2, IteratorUtils.count(b.getBaseVertex().getKeys()));
@@ -308,7 +308,7 @@ public class NativeNeo4jStructureCheck extends AbstractNeo4jGremlinTest {
             // assertEquals(1, b.properties("location").count().next().intValue());
             assertEquals(0, g.E().count().next().intValue());
 
-            assertEquals(3l, this.getBaseGraph().execute("MATCH n RETURN COUNT(n)", null).next().get("COUNT(n)"));
+            assertEquals(3l, this.getBaseGraph().execute("MATCH (n) RETURN COUNT(n)", null).next().get("COUNT(n)"));
             assertEquals(1l, this.getBaseGraph().execute("MATCH (n)-[r]->(m) RETURN COUNT(r)", null).next().get("COUNT(r)"));
             assertEquals(1l, this.getBaseGraph().execute("MATCH (a)-[r]->() WHERE id(a) = " + a.id() + " RETURN COUNT(r)", null).next().get("COUNT(r)"));
             final AtomicInteger counter = new AtomicInteger(0);
@@ -352,7 +352,7 @@ public class NativeNeo4jStructureCheck extends AbstractNeo4jGremlinTest {
             //assertEquals(1, b.properties("location").count().next().intValue());
             assertEquals(0, g.E().count().next().intValue());
 
-            assertEquals(3l, this.getBaseGraph().execute("MATCH n RETURN COUNT(n)", null).next().get("COUNT(n)"));
+            assertEquals(3l, this.getBaseGraph().execute("MATCH (n) RETURN COUNT(n)", null).next().get("COUNT(n)"));
             assertEquals(1l, this.getBaseGraph().execute("MATCH (n)-[r]->(m) RETURN COUNT(r)", null).next().get("COUNT(r)"));
             assertEquals(1l, this.getBaseGraph().execute("MATCH (a)-[r]->() WHERE id(a) = " + a.id() + " RETURN COUNT(r)", null).next().get("COUNT(r)"));
             final AtomicInteger counter = new AtomicInteger(0);
