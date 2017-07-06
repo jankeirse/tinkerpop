@@ -52,6 +52,7 @@ import org.apache.tinkerpop.gremlin.process.traversal.strategy.decoration.Partit
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.decoration.SubgraphStrategy;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.finalization.MatchAlgorithmStrategy;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.optimization.AdjacentToIncidentStrategy;
+import org.apache.tinkerpop.gremlin.process.traversal.strategy.optimization.ByModulatorOptimizationStrategy;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.optimization.FilterRankingStrategy;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.optimization.IdentityRemovalStrategy;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.optimization.IncidentToAdjacentStrategy;
@@ -315,6 +316,8 @@ public enum GryoVersion {
             add(GryoTypeReg.of(MatchAlgorithmStrategy.class, 143));
             add(GryoTypeReg.of(MatchStep.GreedyMatchAlgorithm.class, 144));
             add(GryoTypeReg.of(AdjacentToIncidentStrategy.class, 145));
+            add(GryoTypeReg.of(ByModulatorOptimizationStrategy.class, 170));  // ***LAST ID***
+            add(GryoTypeReg.of(CountStrategy.class, 155));
             add(GryoTypeReg.of(FilterRankingStrategy.class, 146));
             add(GryoTypeReg.of(IdentityRemovalStrategy.class, 147));
             add(GryoTypeReg.of(IncidentToAdjacentStrategy.class, 148));
@@ -324,7 +327,6 @@ public enum GryoVersion {
             add(GryoTypeReg.of(OrderLimitStrategy.class, 152));
             add(GryoTypeReg.of(PathProcessorStrategy.class, 153));
             add(GryoTypeReg.of(PathRetractionStrategy.class, 154));
-            add(GryoTypeReg.of(CountStrategy.class, 155));
             add(GryoTypeReg.of(RepeatUnrollStrategy.class, 156));
             add(GryoTypeReg.of(GraphFilterStrategy.class, 157));
             add(GryoTypeReg.of(LambdaRestrictionStrategy.class, 158));
@@ -379,7 +381,7 @@ public enum GryoVersion {
             tryAddDynamicType(this, "org.apache.tinkerpop.gremlin.driver.message.RequestMessage",
                     "org.apache.tinkerpop.gremlin.driver.ser.RequestMessageGryoSerializer", 167);
             tryAddDynamicType(this, "org.apache.tinkerpop.gremlin.driver.message.ResponseMessage",
-                    "org.apache.tinkerpop.gremlin.driver.ser.ResponseMessageGryoSerializer", 169);  // ***LAST ID***
+                    "org.apache.tinkerpop.gremlin.driver.ser.ResponseMessageGryoSerializer", 169);
         }};
     }
 
@@ -529,6 +531,8 @@ public enum GryoVersion {
             add(GryoTypeReg.of(MatchAlgorithmStrategy.class, 143));
             add(GryoTypeReg.of(MatchStep.GreedyMatchAlgorithm.class, 144));
             add(GryoTypeReg.of(AdjacentToIncidentStrategy.class, 145));
+            add(GryoTypeReg.of(ByModulatorOptimizationStrategy.class, 170)); // ***LAST ID***
+            add(GryoTypeReg.of(CountStrategy.class, 155));
             add(GryoTypeReg.of(FilterRankingStrategy.class, 146));
             add(GryoTypeReg.of(IdentityRemovalStrategy.class, 147));
             add(GryoTypeReg.of(IncidentToAdjacentStrategy.class, 148));
@@ -538,13 +542,12 @@ public enum GryoVersion {
             add(GryoTypeReg.of(OrderLimitStrategy.class, 152));
             add(GryoTypeReg.of(PathProcessorStrategy.class, 153));
             add(GryoTypeReg.of(PathRetractionStrategy.class, 154));
-            add(GryoTypeReg.of(CountStrategy.class, 155));
             add(GryoTypeReg.of(RepeatUnrollStrategy.class, 156));
             add(GryoTypeReg.of(GraphFilterStrategy.class, 157));
             add(GryoTypeReg.of(LambdaRestrictionStrategy.class, 158));
             add(GryoTypeReg.of(ReadOnlyStrategy.class, 159));
             add(GryoTypeReg.of(MatchStep.CountMatchAlgorithm.class, 160));
-            add(GryoTypeReg.of(MatchStep.GreedyMatchAlgorithm.class, 167)); // ***LAST ID***
+            add(GryoTypeReg.of(MatchStep.GreedyMatchAlgorithm.class, 167));
         }};
     }
 
